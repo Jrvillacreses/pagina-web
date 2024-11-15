@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="css/index.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <link rel='stylesheet' type='text/css' media='screen' href='css/index.css'>
-    <script src='js/index.js'></script>
 </head>
 <body>
+    <!-- Navbar -->
     <div class="nav-container">
         <nav role="navigation" class="nav-menu w-nav-menu">
             <div class="nav-left-buttons">
@@ -46,13 +45,54 @@
             </div>
         </div>
     </div>
-    <div class="header">
-        <div class="header-illustration-03"></div>
-        <div class="header-illustration-02"></div>
-        <div class="header-illustration-01"></div>
+
+    <!-- Home Section -->
+    <div class="home-container">
+        <div class="fondo-1"></div>
+        <div class="fondo-2"></div>
+        <div class="fondo-3"></div>
     </div>
-    <div>
-        <div class="caja"></div>
-    </div>
+
+    <!-- Work Section -->
+    <section class="work-section">
+        <div class="card">
+            <img src="illustration.jpg" alt="Illustration Example">
+            <div class="card-overlay">
+                <h3>Illustration Example</h3>
+                <p>Descripción breve del ejemplo de ilustración.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="graphic-design.jpg" alt="Graphic Design Example">
+            <div class="card-overlay">
+                <h3>Graphic Design Example</h3>
+                <p>Descripción breve del ejemplo de diseño gráfico.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="web-design.jpg" alt="Web Design Example">
+            <div class="card-overlay">
+                <h3>Web Design Example</h3>
+                <p>Descripción breve del ejemplo de diseño web.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-me">Sobre mí</div>
+        <div class="profile-picture">Foto de Perfil</div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="location-map">Mapa de Ubicación</div>
+        <div class="contact-form">Formulario de Contacto</div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-media">Logos de Redes Sociales</div>
+    </footer>
 </body>
 </html>
