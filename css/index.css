@@ -1,27 +1,22 @@
-/* Reset CSS */
-* {
+/* Estilos generales */
+body {
     margin: 0;
-    padding: 0;
-    font-family:'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-/* Navbar */
-.nav-container{
-    width: 100%;
-    height: 65px;
-    max-height: 65px;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ===== Menú de navegación ===== */
+.header {
     position: fixed;
-    z-index: 999;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Menú semitransparente */
+    z-index: 1000;
+    top:0;
 }
-.nav-container nav{
+
+.nav {
     display: flex;
-    align-items: center;
-    flex-direction: row;
     justify-content: space-between;
+<<<<<<< Updated upstream
 }
 .nav-container .nav-left-buttons{
     display: flex;
@@ -58,38 +53,95 @@
 
 .logo-icon-link {
     display: flex;
+=======
+>>>>>>> Stashed changes
     align-items: center;
-    justify-content: center;
-}
-/* Estilo base para ambas imágenes */
-.logo-icon {
-    transition: opacity 0.5s linear;
+    padding: 15px 20px;
 }
 
-/* La imagen de hover (logo2.png) está inicialmente oculta */
-.logo-hover {
-    opacity: 0;
+.logo a {
+    text-decoration: none;
+    color: #000;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    transition: max-height 0.3s;
+    overflow: hidden;
+    max-height: 500px; /* Ajuste para mobile-first */
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s;
+}
+
+/* Animaciones :hover en el menú */
+.nav-links a:hover {
+    color: #555;
+}
+
+/* Icono de menú hamburguesa */
+.hamburger {
+    display: none; /* Se mostrará en móvil */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: #000;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Ocultar checkbox */
+#menu-toggle {
     display: none;
 }
 
-/* Al hacer hover en el enlace, intercambia la opacidad */
-.logo-icon-link:hover .logo-default {
-    opacity: 0;
-    display: none; /* Oculta la imagen original */
-}
-
-.logo-icon-link:hover .logo-hover {
-    opacity: 1;
-    display: block; /* Muestra la imagen de hover */
-}
-
-
-/* Home Section */
-.home-container {
-    position: relative;
-    height: 90vh;
+/* ===== Carrousel ===== */
+.carousel {
+    margin-top: 80px; /* Espacio para el menú fijo */
     overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    animation: slide 15s infinite;
+}
+
+.carousel-item {
+    min-width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+
+/* Animación del carrousel */
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0%); }
+}
+
+/* ===== Sección de obras ===== */
+.obras .container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+<<<<<<< Updated upstream
     align-items: center;
     width: 100vw;
     max-width: 100vw;
@@ -176,6 +228,10 @@
   .reverse {
     animation-direction: reverse;
   }
+=======
+    padding: 50px 20px;
+}
+>>>>>>> Stashed changes
 
 
 .work-section {
@@ -199,34 +255,31 @@
 }
 .card {
     position: relative;
+<<<<<<< Updated upstream
     width: 20vw;
     height: 250px;
+=======
+    margin: 20px;
+>>>>>>> Stashed changes
     overflow: hidden;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    text-align: center;
+    width: 300px;
 }
 
 .card img {
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    transition: filter 0.3s;
 }
 
-.card-overlay {
+.card-info {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
     opacity: 0;
     transition: opacity 0.3s;
+<<<<<<< Updated upstream
 }
 
 .card:hover .card-overlay {
@@ -270,11 +323,131 @@
 /* Footer */
 footer {
     background-color: #333;
+=======
+>>>>>>> Stashed changes
     padding: 10px;
-    text-align: center;
-    color: #fff;
 }
 
-.social-media {
+/* Efectos :hover en las cards */
+.card:hover img {
+    filter: blur(2px) grayscale(100%); /* Imagen difuminada y en blanco y negro */
+}
+
+.card:hover .card-info {
+    opacity: 1; /* Mostrar título y descripción */
+}
+
+/* ===== Sección de biografía ===== */
+.biografia .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.bio-image {
+    flex: 1;
+}
+
+.bio-image img {
+    max-width: 100%;
+    border-radius: 50%; /* Hacer la imagen circular */
+}
+
+.bio-text {
+    flex: 2;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bio-text h2 {
+    margin-bottom: 20px;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-links {
     margin-top: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Responsive Design ===== */
+/* Para pantallas mayores a 768px */
+@media screen and (min-width: 768px) {
+    /* Menú de navegación */
+    .nav {
+        padding: 15px 40px;
+    }
+
+    .nav-links {
+        max-height: none;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* Sección de biografía en fila */
+    .biografia .container {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .bio-text {
+        margin-top: 0;
+        padding-left: 20px;
+    }
+
+    /* Footer */
+    .footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Para pantallas menores a 768px */
+@media screen and (max-width: 767px) {
+    /* Mostrar menú hamburguesa */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        max-height: 0;
+    }
+
+    /* Mostrar/ocultar menú al hacer clic en el icono */
+    #menu-toggle:checked + .hamburger + .nav-links {
+        max-height: 500px;
+    }
 }

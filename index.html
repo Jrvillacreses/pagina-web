@@ -2,44 +2,61 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <title>Portfolio del Artista</title>
     <link rel="stylesheet" href="css/index.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 <body>
-    <!-- Navbar -->
-    <div class="nav-container">
-        <nav role="navigation" class="nav-menu w-nav-menu">
-            <div class="nav-left-buttons">
-                <a href="#"  class="menu-nav-link-left nav-link">HOME</a>
-            </div>
-            <div class="nav-left-buttons">
-                <a href="#" class="menu-nav-link-left nav-link">WORK</a>
-            </div>
-            <div class="nav-left-buttons">
-                <a href="#" class="menu-nav-link-left nav-link">ILLUSTRATIONS</a>
-            </div>
-            <a href="#" class="logo-icon-link">
-                <img src="img/logo.PNG" alt="Logo" class="logo-icon logo-default">
-                <img src="img/logo2.png" alt="Logo Hover" class="logo-icon logo-hover">
-            </a>
-            <div class="nav-right-buttons">
-                <a href="#" class="menu-nav-link-right nav-link">ABOUT</a>
-            </div>
-            <div class="nav-right-buttons">
-                <a href="#" class="menu-nav-link-right nav-link">SERVICES</a>
-            </div>
-            <div class="nav-right-buttons">
-                <a href="#" class="menu-nav-link-right nav-link">CONTACT</a>
-            </div>
-        </nav>
-        <div class="mobile-nav">
-            <div class="menu-button w-nav-button">
-                <div class="hamburger">
 
+    <!-- Menú de navegación -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="index.html">Artista</a>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <!-- Icono de menú hamburguesa -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="ilustracion.html">ILUSTRACIÓN</a></li>
+                <li><a href="diseno.html">DISEÑO</a></li>
+                <li><a href="about.html">ABOUT ME</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrousel -->
+    <section class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="img/header-illustration-01.PNG" alt="Obra 1">
+            </div>
+            <div class="carousel-item">
+                <img src="img/IMG_2736.PNG" alt="Obra 2">
+            </div>
+            <div class="carousel-item">
+                <img src="img/header-illustration-03.PNG" alt="Obra 3">
+            </div>
+            <!-- Añadir más items si es necesario -->
+        </div>
+    </section>
+
+    <!-- Sección de obras -->
+    <section class="obras">
+        <div class="container">
+            <div class="card">
+                <img src="img/header-illustration-02.PNG" alt="Obra 1">
+                <div class="card-info">
+                    <h3>Título de la Obra 1</h3>
+                    <p>Descripción de la obra 1.</p>
                 </div>
             </div>
+<<<<<<< Updated upstream
             <div class="mobile-nav-logo-container">
                 <a href="#" class="icon-logo-mobile"></a>
             </div>
@@ -85,24 +102,43 @@
                     <p>Descripción breve del ejemplo de diseño web.</p>
                 </div>
             </div>
+=======
+            <!-- Repetir las cards para más obras -->
+>>>>>>> Stashed changes
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="about-me">Sobre mí</div>
-        <div class="profile-picture">Foto de Perfil</div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="location-map">Mapa de Ubicación</div>
-        <div class="contact-form">Formulario de Contacto</div>
+    <!-- Sección de biografía -->
+    <section class="biografia">
+        <div class="container">
+            <div class="bio-image">
+                <img src="artista.jpg" alt="Artista">
+            </div>
+            <div class="bio-text">
+                <h2>Sobre el Artista</h2>
+                <p>Biografía del artista...</p>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="social-media">Logos de Redes Sociales</div>
+    <footer class="footer">
+        <div class="container">
+            <div class="social-media">
+                <!-- Iconos de redes sociales -->
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">HOME</a>
+                <a href="ilustracion.html">ILUSTRACIÓN</a>
+                <a href="diseno.html">DISEÑO</a>
+                <a href="about.html">ABOUT ME</a>
+                <a href="contacto.html">CONTACTO</a>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
