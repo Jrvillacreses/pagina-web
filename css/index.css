@@ -5,85 +5,92 @@
     font-family:'Roboto', sans-serif;
 }
 
-/* Navbar */
-.nav-container{
-    width: 100%;
-    height: 65px;
-    max-height: 65px;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 999;
-}
-.nav-container nav{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.nav-container .nav-left-buttons{
-    display: flex;
-    margin: 0 25px;
-}
-.nav-container .nav-right-buttons{
-    display: flex;
-    margin: 0 25px;
-}
-.nav-container div a{
-    text-decoration: none;
-    color: #0a042a;
-    font-weight: 600;
-}
-.nav-container .logo-icon{
-    width: 120px;
-}
-/* Efecto :hover */
-.nav-link:hover {
-    color: #23b2de; /* Cambia el color al pasar el mouse */
-    position: relative;
-}
-
-/* Subrayado animado */
-.nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0px;
-    width: 0%;
-    height: 2px;
-    background-color: #23b2de;
-}
-
-.logo-icon-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-/* Estilo base para ambas imágenes */
-.logo-icon {
-    transition: opacity 0.5s linear;
-}
-
-/* La imagen de hover (logo2.png) está inicialmente oculta */
-.logo-hover {
-    opacity: 0;
+.nav-menu{
     display: none;
 }
 
-/* Al hacer hover en el enlace, intercambia la opacidad */
-.logo-icon-link:hover .logo-default {
-    opacity: 0;
-    display: none; /* Oculta la imagen original */
-}
+/* General Styles */
 
-.logo-icon-link:hover .logo-hover {
-    opacity: 1;
-    display: block; /* Muestra la imagen de hover */
-}
+.-mob-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 3;
+  }
+  
+  /* Hamburger Icon */
+  .-mob-hamburger {
+    cursor: pointer;
+  }
+  
+  .-mob-hamburger input {
+    display: none;
+  }
+  
+  .-mob-hamburger svg {
+    height: 3em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line {
+    fill: none;
+    stroke: rgb(10, 8, 22);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  
+  .-mob-hamburger input:checked + svg {
+    transform: rotate(-45deg);
+  }
+  
+  .-mob-hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  
+  /* Menu Styles */
+  .-mob-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .-mob-menu i{
+    margin-right: 2vw;
+  }
+  .-mob-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .-mob-menu a:hover {
+    background-color: #555;
+  }
+  
+  /* Show menu when checkbox is checked */
+  .-mob-hamburger input:checked ~ .-mob-menu {
+    display: flex;
+  }
+  
 
-
+/* fin nav */
 /* Home Section */
 .home-container {
     position: relative;
@@ -111,10 +118,12 @@
 .home-container::before {
     background-image: url("../img/header-illustration-03.PNG");
     z-index: -2;
+    background-position-x: center;
 }
 
 .home-container::after {
     background-image: url("../img/header-illustration-02.PNG");
+    background-position-x: center;
     
     z-index: -1;
 }
@@ -125,6 +134,7 @@
     background-image: url(../img/header-illustration-01.PNG);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center;
 }
 .logo {
     position: relative;
@@ -186,15 +196,16 @@
     align-content: center;
 }
 .cards-container {
-    background-image: url(../img/pencil.jpg);
-    background-size: cover;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 20px;
-    height: 60vh;
+    height: 70vh;
     align-content: center;
+}
+.uno-card input{
+    display: none;
 }
 .card {
     position: relative;
@@ -230,6 +241,13 @@
 
 .card:hover .card-overlay {
     opacity: 1;
+}
+
+input:checked ~ .card-inner{
+    transform: rotateY(180deg) rotate(25deg);
+}
+input:not(:checked) ~ .card-inner{
+    transform: rotateY(0deg) rotate(0deg);
 }
 
 /* About Section */
@@ -298,9 +316,7 @@ footer {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
   
-  .uno-card:hover .card-inner {
-    transform: rotateY(180deg) rotate(25deg);
-  }
+  
   
   .front, .back {
     position: absolute;
@@ -350,4 +366,135 @@ footer {
     align-items: center;
     justify-content: center;
   }
+  /* tabletas */
+@media (min-width: 768px) {
+  body {
+    font-size: 15px;
+  }
   
+  /* Navbar */
+  .nav-menu .w-nav-menu{
+    display: block;
+}
+
+.-mob-container{
+    display: none;
+}
+
+.nav-container{
+    width: 100%;
+    height: 65px;
+    max-height: 65px;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+}
+.nav-container .nav-menu{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav-container .nav-left-buttons{
+    display: flex;
+    margin: 0 25px;
+}
+.nav-container .nav-right-buttons{
+    display: flex;
+    margin: 0 25px;
+}
+.nav-container div a{
+    text-decoration: none;
+    color: #0a042a;
+    font-weight: 600;
+}
+.nav-container .logo-icon{
+    width: 120px;
+}
+/* Efecto :hover */
+.nav-link:hover {
+    color: #23b2de; /* Cambia el color al pasar el mouse */
+    position: relative;
+}
+
+/* Subrayado animado */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0%;
+    height: 2px;
+    background-color: #23b2de;
+}
+
+.logo-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Estilo base para ambas imágenes */
+.logo-icon {
+    transition: opacity 0.5s linear;
+}
+
+/* La imagen de hover (logo2.png) está inicialmente oculta */
+.logo-hover {
+    opacity: 0;
+    display: none;
+}
+
+/* Al hacer hover en el enlace, intercambia la opacidad */
+.logo-icon-link:hover .logo-default {
+    opacity: 0;
+    display: none; /* Oculta la imagen original */
+}
+
+.logo-icon-link:hover .logo-hover {
+    opacity: 1;
+    display: block; /* Muestra la imagen de hover */
+}
+
+  .home-container::before {
+    background-image: url("../img/header-illustration-03.PNG");
+    z-index: -2;
+    background-position-x: center;
+}
+
+.home-container::after {
+    background-image: url("../img/header-illustration-02.PNG");
+    background-position-x: center;
+    
+    z-index: -1;
+}
+.home-container .fondo-1{
+    display: flex;
+    min-height: 90vh;
+    width: 100%;
+    background-image: url(../img/header-illustration-01.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+}
+
+}
+
+/* escritorio*/
+@media (min-width: 992px) {
+  body {
+    font-size: 16px;
+  }
+  .uno-card:hover .card-inner {
+    transform: rotateY(180deg) rotate(25deg);
+  }
+}
+
+/* pantallas grandes */
+@media (min-width: 1200px) {
+  body {
+    font-size: 17px;
+  }
+}

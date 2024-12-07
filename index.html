@@ -6,6 +6,10 @@
     <title>Portafolio</title>
     <link rel="stylesheet" href="css/index.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/regular.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Navbar -->
@@ -18,7 +22,7 @@
                 <a href="#" class="menu-nav-link-left nav-link">WORK</a>
             </div>
             <div class="nav-left-buttons">
-                <a href="#" class="menu-nav-link-left nav-link">ILLUSTRATIONS</a>
+                <a href="illustration.html" class="menu-nav-link-left nav-link">ILLUSTRATIONS</a>
             </div>
             <a href="#" class="logo-icon-link">
                 <img src="img/logo.PNG" alt="Logo" class="logo-icon logo-default">
@@ -34,16 +38,25 @@
                 <a href="#" class="menu-nav-link-right nav-link">CONTACT</a>
             </div>
         </nav>
-        <div class="mobile-nav">
-            <div class="menu-button w-nav-button">
-                <div class="hamburger">
-
-                </div>
-            </div>
-            <div class="mobile-nav-logo-container">
-                <a href="#" class="icon-logo-mobile"></a>
-            </div>
-        </div>
+        <div class="-mob-container">
+            <label class="-mob-hamburger">
+              <input type="checkbox" id="menu-toggle">
+              <svg viewBox="0 0 32 32">
+                <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                <path class="line" d="M7 16 27 16"></path>
+              </svg>
+              <nav class="-mob-menu">
+                <a href="index.html" class="-mob-link"><i class="fa-solid fa-house"></i>Home</a>
+                <a href="#" class="-mob-link"><i class="fa-solid fa-swatchbook"></i>Work</a>
+                <a href="illustration.html" class="-mob-link"><i class="fa-solid fa-pencil"></i>Illustrations</a>
+                <a href="#" class="-mob-link"><i class="fa-solid fa-address-card"></i>About</a>
+                <a href="#" class="-mob-link"><i class="fa-solid fa-palette"></i>Services</a>
+                <a href="#" class="-mob-link"><i class="fa-solid fa-pen-to-square"></i>Contact</a>
+              </nav>
+            </label>
+          </div>
+          
+          
     </div>
 
     <!-- Home Section -->
