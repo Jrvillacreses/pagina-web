@@ -18,6 +18,8 @@
     padding: 10px 20px;
     position: fixed;
     z-index: 3;
+    width:100%;
+    background-color: #ffffffba;
   }
   
   /* Hamburger Icon */
@@ -62,7 +64,6 @@
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: #444;
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
@@ -73,7 +74,7 @@
   }
   .-mob-menu a {
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 1.2em;
     padding: 5px 10px;
     border-radius: 5px;
