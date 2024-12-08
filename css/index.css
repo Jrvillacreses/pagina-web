@@ -95,7 +95,7 @@
 /* Home Section */
 .home-container {
     position: relative;
-    height: 90vh;
+    height: 80vh;
     overflow: hidden;
     justify-content: center;
     align-items: center;
@@ -130,6 +130,7 @@
 }
 .home-container .fondo-1{
     display: flex;
+    margin-top:10vh;
     min-height: 90vh;
     width: 100%;
     background-image: url(../img/header-illustration-01.PNG);
@@ -168,6 +169,8 @@
     justify-content: space-around;
     min-width: 100%;
     height: 10vh;
+    position: relative;
+    left: 0;
   }
   
   @keyframes scrolling {
@@ -202,7 +205,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 20px;
-    height: 70vh;
+    margin-top: 5vh; /*height: 70vh;*/
     align-content: center;
 }
 .uno-card input{
@@ -372,7 +375,13 @@ footer {
   body {
     font-size: 15px;
   }
-  
+}
+
+/* escritorio*/
+@media (min-width: 992px) {
+  body {
+    font-size: 16px;
+  }
   /* Navbar */
   .nav-menu .w-nav-menu{
     display: block;
@@ -481,12 +490,8 @@ footer {
     background-position-x: center;
 }
 
-}
-
-/* escritorio*/
-@media (min-width: 992px) {
-  body {
-    font-size: 16px;
+  .illust-section{
+    padding-top:65px;
   }
   .uno-card:hover .card-inner {
     transform: rotateY(180deg) rotate(25deg);
